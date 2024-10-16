@@ -2,14 +2,19 @@ package com.wesleywesp.job_ap.controllers;
 
 import com.wesleywesp.job_ap.model.JobPost;
 import com.wesleywesp.job_ap.model.JodPostDTO;
+import com.wesleywesp.job_ap.service.JobService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class JobController {
+    @Autowired
+    private JobService service;
 
     @GetMapping({"/", "home"})
     public String home(){
@@ -23,12 +28,17 @@ public class JobController {
     }
 
 
-    @PostMapping("hanbleForm")
-    public  String handlrForm(JodPostDTO dados){
-        var jobpost = dados;
-        new JobPost(dados);
-        System.out.println("ok");
-        return "sucess";
+    @PostMapping("handleForm")
+    public  String handlrForm(JobPost dados){
+        service.addJob(dados);
+        return "success";
+
+    }
+    @GetMapping("viewalljobs")
+    public String viewalljobs(Model m){
+        List<JobPost> jobs = service.getAllJobs();
+        m.addAttribute("jobPosts", jobs);
+        return "viewalljobs";
 
     }
 

@@ -32,9 +32,9 @@
 	<body>
 
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+		<nav class="navbar navbar-expand-lg navbar-light bg-clr">
 			<div class="container">
-				<a class="navbar-brand fs-1 fw-medium" href="#">Telusko Job
+				<a class="navbar-brand fs-1 fw-medium" href="#">Wesleywesp Job
 					Portal Web App</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -47,7 +47,7 @@
 						<li class="nav-item"><a class="nav-link" href="home">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="viewalljobs">About</a></li>
 
-						<li class="nav-item"><a class="nav-link" href="https://telusko.com/">Contact</a>
+						<li class="nav-item"><a class="nav-link" href="https://github.com/wesleywesp">Contact</a>
 						</li>
 					</ul>
 				</div>

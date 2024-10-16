@@ -2,6 +2,7 @@ package com.wesleywesp.job_ap.model;
 
 import lombok.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @Getter
